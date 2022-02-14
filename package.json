@@ -1,6 +1,12 @@
 {
   "name": "moon-dashboard",
   "version": "0.1.0",
+  "author": {
+    "name": "Amber Harmon",
+    "email": "amber@amberharmon.com"
+  },
+  "description": "View the current and future phases of the moon",
+  "keywords": ["moon, astrology, zodiac, witchcraft, space"],
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -10,6 +16,9 @@
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "sass": "^1.49.7"
   },
   "scripts": {
     "start": "react-scripts start",
