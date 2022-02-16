@@ -1,0 +1,17 @@
+$navy-blue: #002a5d;
+$dark-navy-blue: #001833;
+$pale-yellow: #e6dea9;
+$light-gray: #cfcfcf;
+$lightest-gray: #e3e3e3;
+$shadow-dark: #00162e;
+$shadow-med: #003566;
+$shadow-inset: #004f99;
+
+@mixin panel {
+    margin: 1.25em auto;
+    padding: 1.25em;
+    border-radius: 1.25em;
+    box-shadow: 0.9375em 0.9375em 3.125em $shadow-dark,
+              -1.25em -1.25em 3.125em $shadow-med,
+              inset 1px 1px 1em $shadow-inset;
+}

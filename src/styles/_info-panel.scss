@@ -1,0 +1,19 @@
+@import 'variables';
+
+.info-panel {
+    @include panel;
+
+    & .button {
+        color: $lightest-gray;
+        font-weight: 700;
+        text-decoration: none;
+        background-color: $dark-navy-blue;
+        width: 11.5em;
+        height: 2.375em;
+        margin: 0.9375em auto 1.125em auto;
+        border-radius: .75em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

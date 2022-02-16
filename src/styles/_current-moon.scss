@@ -1,0 +1,14 @@
+@import 'variables';
+
+.current-moon {
+    .moon {
+        margin: 0 auto 1.875em auto;
+        width: 12.5em;
+        height: 12.5em;
+    }
+
+    .date-and-time {
+        @include panel;
+        line-height: 1.5;
+    }
+}

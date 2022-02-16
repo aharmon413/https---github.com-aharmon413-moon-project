@@ -1,0 +1,39 @@
+@import 'current-moon';
+@import 'info-panel';
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    color: $light-gray;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    background-color: $navy-blue;
+}
+
+h1, h2, .current-moon p {
+    color: $lightest-gray;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+h1 {
+    font-size: 3.25em;
+    margin: 2rem 0 1rem 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 1.125rem 0 0.625rem 0;
+}
+
+.moon, .date-and-time, .info-panel {
+    width: 14.6875em;
+}
