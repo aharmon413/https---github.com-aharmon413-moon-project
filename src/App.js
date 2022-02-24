@@ -5,19 +5,17 @@ import './styles/App.scss';
 
 function App() {
   return (
-    <main className="App">
-      <h1>MoonDash</h1>
+    <main>
       <div className="current-moon">
+        <h1>it's da moon</h1>
         <Moon />
         <DateAndTime />
       </div>
-      <div className="current-phase">
-        <InfoPanel sectionHeader={'Current Phase'}/>
-        <InfoPanel sectionHeader={'During This Phase'}/>
-      </div>
-      <div className="major-phase">
-        <InfoPanel sectionHeader={'Header'}/> { /* Next Major Phase */}
-        <InfoPanel sectionHeader={'Header'}/> { /* Last Major Phase */}
+      <div className="panels">
+        <InfoPanel sectionHeader='Current Phase'/>
+        <InfoPanel sectionHeader='During This Phase'/>
+        <InfoPanel sectionHeader='Header'/>
+        <InfoPanel sectionHeader='Header'/>
       </div>
     </main>
   );

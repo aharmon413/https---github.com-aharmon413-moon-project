@@ -2,13 +2,21 @@
 
 .current-moon {
     .moon {
-        margin: 0 auto 1.875em auto;
+        margin: 0 auto 1.5em auto;
         width: 12.5em;
-        height: 12.5em;
+
+        @include extra-large {
+            width: 26.5625em;
+        }
     }
 
     .date-and-time {
-        @include panel;
         line-height: 1.5;
+
+        & p {
+            @include medium {
+                font-size: 1.5em;
+            }
+        }
     }
 }

@@ -3,15 +3,31 @@ $dark-navy-blue: #001833;
 $pale-yellow: #e6dea9;
 $light-gray: #cfcfcf;
 $lightest-gray: #e3e3e3;
-$shadow-dark: #00162e;
-$shadow-med: #003566;
-$shadow-inset: #004f99;
 
-@mixin panel {
-    margin: 1.25em auto;
-    padding: 1.25em;
+@mixin panel-shadow {
     border-radius: 1.25em;
-    box-shadow: 0.9375em 0.9375em 3.125em $shadow-dark,
-              -1.25em -1.25em 3.125em $shadow-med,
-              inset 1px 1px 1em $shadow-inset;
+    box-shadow: 0.9375em 0.9375em 3.125em #00162e,
+              -1.25em -1.25em 3.125em #003566,
+              inset 1px 1px 1em #004f99;
+};
+
+/* same layout as default but slightly wider elements */
+@mixin medium {
+    @media screen and (min-width: 428px) {
+        @content
+    }
+};
+
+/* 2x2 grid of info panels underneath moon svg */
+@mixin large {
+    @media screen and (min-width: 900px) {
+        @content
+    }
+};
+
+/* current moon on the left, 2x2 info panels grid on the right */
+@mixin extra-large {
+    @media screen and (min-width: 1400px) {
+        @content
+    }
 }

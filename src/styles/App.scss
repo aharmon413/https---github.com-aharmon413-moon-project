@@ -1,5 +1,5 @@
 @import 'current-moon';
-@import 'info-panel';
+@import 'info-panels';
 
 html {
     font-size: 100%;
@@ -19,7 +19,8 @@ body {
     background-color: $navy-blue;
 }
 
-h1, h2, .current-moon p {
+h1, h2, 
+.date-and-time {
     color: $lightest-gray;
     font-family: 'Comfortaa', sans-serif;
 }
@@ -32,8 +33,40 @@ h1 {
 h2 {
     font-size: 1.5em;
     margin: 1.125rem 0 0.625rem 0;
+
+    @include large {
+        font-size: 1.75em;
+    }
 }
 
-.moon, .date-and-time, .info-panel {
+p {
+    @include large {
+        font-size: 1.15em;
+    }
+}
+
+main {
+    @include extra-large {
+        margin: 0 auto;
+        width: 84.375em;
+        padding-top: 6.5em;
+        display: grid;
+        justify-content: center;
+        grid-template: 1fr / 31.25em /* current-moon div */ 53.125em /* panels div */;
+    }
+}
+
+.date-and-time, .info-panel {
+    @include panel-shadow;
+    margin: 1.25em auto;
+    padding: 1.25em;
     width: 14.6875em;
+
+    @include medium {
+        width: 20.3125em;
+    }
+    @include large {
+        margin-top: 0;
+        width: 25em;
+    }
 }
