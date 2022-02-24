@@ -4,6 +4,8 @@
     .moon {
         margin: 0 auto 1.5em auto;
         width: 12.5em;
+        position: relative;
+        z-index: 1; // prevents box-shadow around relatively positioned date-and-time panel from overlapping moon svg
 
         @include extra-large {
             width: 26.5625em;
@@ -12,6 +14,21 @@
 
     .date-and-time {
         line-height: 1.5;
+        position: relative;
+
+        .settings {
+            font-size: 1.2em;
+            background: none;
+            border: none;
+            position: absolute;
+            top: 2.85em;
+            right: .65em;
+            cursor: pointer;
+
+            @include medium {
+                top: 4em;
+            }
+        }
 
         & p {
             @include medium {

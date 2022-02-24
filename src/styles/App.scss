@@ -28,6 +28,10 @@ h1, h2,
 h1 {
     font-size: 3.25em;
     margin: 2rem 0 1rem 0;
+
+    @include extra-large {
+        margin-top: 1.25rem;
+    }
 }
 
 h2 {
@@ -69,4 +73,15 @@ main {
         margin-top: 0;
         width: 25em;
     }
+}
+
+.icon {
+    color: $light-gray;
+}
+
+.github {
+    opacity: .35;
+    position: absolute;
+    top: .25em;
+    right: .5em;
 }

@@ -1,13 +1,14 @@
-import Button from "./Button";
+import LinkButton from "./LinkButton";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const InfoPanel = ({ sectionHeader, cssClass }) => {
     let button;
-    {if (sectionHeader === 'Current Phase') {
-            button = <Button btnText={'Share on Twitter'}/>
+    if (sectionHeader === 'Current Phase') {
+            button = <LinkButton btnText={<><FontAwesomeIcon icon={faTwitter} className="twitter-icon" /> Share on Twitter </>}/>
         } else if (sectionHeader === 'During This Phase') {
-            button = <Button btnText={'Learn More'}/>
+            button = <LinkButton btnText={'Learn More'}/>
         }
-    }
 
     return ( 
         <section className={`info-panel ${cssClass}`}>

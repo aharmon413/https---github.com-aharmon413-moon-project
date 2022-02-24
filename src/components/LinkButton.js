@@ -1,7 +1,7 @@
-const Button = ({ btnText }) => {
+const LinkButton = ({ btnText }) => {
     return ( 
         <a href="/" className="button">{btnText}</a>
      );
 }
  
-export default Button;
+export default LinkButton;

@@ -1,6 +1,8 @@
 import Moon from './components/Moon';
 import DateAndTime from './components/DateAndTime';
 import InfoPanel from './components/InfoPanel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import './styles/App.scss';
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
         <InfoPanel sectionHeader='Header'/>
         <InfoPanel sectionHeader='Header'/>
       </div>
+      <a href="#">{<FontAwesomeIcon icon={faGithub} size='2x' className='icon github' />}</a>
     </main>
   );
 }
