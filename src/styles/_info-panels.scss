@@ -11,6 +11,19 @@
 }
 
 .info-panel {
+
+    & ul {
+        text-align: left;
+        line-height: 2;
+        padding: .65em 1em 0 2em;
+    }
+
+    .content {
+        @include large {
+            font-size: 1.15em;
+        }
+    }
+    
     .button {
         color: $lightest-gray;
         font-weight: 700;

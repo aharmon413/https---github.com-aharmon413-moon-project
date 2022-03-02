@@ -56,8 +56,8 @@ function App() {
       <div className="panels">
         <InfoPanel sectionHeader={currentPhaseName} sectionContent={moonCycle[currentPhaseName].description} />
         <InfoPanel sectionHeader='During This Phase' sectionContent={currentPhaseActivities} />
-        <InfoPanel sectionHeader='Next Major Phase'/>
-        <InfoPanel sectionHeader='Last Major Phase'/>
+        <InfoPanel sectionHeader='Next Major Phase' sectionContent={null}/>
+        <InfoPanel sectionHeader='Last Major Phase' sectionContent={null}/>
       </div>
       <a href="#">{<FontAwesomeIcon icon={faGithub} size='2x' className='icon github' />}</a>
     </main>

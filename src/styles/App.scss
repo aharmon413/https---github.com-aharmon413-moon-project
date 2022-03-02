@@ -43,12 +43,6 @@ h2 {
     }
 }
 
-p {
-    @include large {
-        font-size: 1.15em;
-    }
-}
-
 main {
     @include extra-large {
         margin: 0 auto;
