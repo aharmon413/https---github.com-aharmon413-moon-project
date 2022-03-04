@@ -14,8 +14,12 @@
 
     & ul {
         text-align: left;
-        line-height: 2;
+        line-height: 1.75;
         padding: .65em 1em 0 2em;
+
+        li {
+            margin-bottom: .75em;
+        }
     }
 
     .content {

@@ -2,6 +2,8 @@ import Moon from './components/Moon';
 import DateAndTime from './components/DateAndTime';
 import InfoPanel from './components/InfoPanel';
 import { moonCycle } from './data/mooncycle';
+import { majorPhases } from './data/majormoonphases';
+import { zodiac } from './data/zodiacsigns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import './styles/App.scss';
@@ -27,7 +29,7 @@ function getPhaseName(phase) {
     default:
       return;
   }
-}
+};
 
 // http://www.ben-daglish.net/moon.shtml
 // this function uses a known new moon in 1970 and the current date to calculate a value between 1 and 30,
@@ -39,11 +41,27 @@ function calcCurrentPhase() {
   let phase = ((now.getTime() - new_moon.getTime()) / 1000) % lp;
   phase = Math.floor(phase / (24 * 3600)) + 1;
   let phaseName = getPhaseName(phase);
-  return [phase, phaseName];
-}
+  return [now, phase, phaseName];
+};
+
+function calcMajorPhases(now) {
+  let lastPhase, nextPhase, lastMajorPhase;
+  for (let majorPhase of majorPhases) {
+    let majorPhaseDate = new Date(`${majorPhase.date} ${majorPhase.time}`);
+    if (now > majorPhaseDate) {
+      lastMajorPhase = majorPhase; // save this date in case the next date checked is our next major phase. If so, that means this one is the previous major phase.
+    } else if (now <= majorPhaseDate) {
+      lastPhase = lastMajorPhase;
+      nextPhase = majorPhase;
+      return [lastPhase, nextPhase];
+    }
+  }
+};
 
 function App() {
-  let [currentPhase, currentPhaseName] = calcCurrentPhase();
+  let [now, currentPhase, currentPhaseName] = calcCurrentPhase();
+  let [lastPhase, nextPhase] = calcMajorPhases(now);
+  console.log(lastPhase, nextPhase);
   let currentPhaseActivities = moonCycle[currentPhaseName].activities.map(item => <li>{item}</li>);
 
   return (
@@ -56,8 +74,8 @@ function App() {
       <div className="panels">
         <InfoPanel sectionHeader={currentPhaseName} sectionContent={moonCycle[currentPhaseName].description} />
         <InfoPanel sectionHeader='During This Phase' sectionContent={currentPhaseActivities} />
-        <InfoPanel sectionHeader='Next Major Phase' sectionContent={null}/>
-        <InfoPanel sectionHeader='Last Major Phase' sectionContent={null}/>
+        <InfoPanel sectionHeader='Next Major Phase' sectionContent={`The ${nextPhase.type} Moon is on ${nextPhase.date} in the sign of ${nextPhase.sign}. ${zodiac[nextPhase.sign]}`}/>
+        <InfoPanel sectionHeader='Last Major Phase' sectionContent={`The ${lastPhase.type} Moon was on ${lastPhase.date} in the sign of ${lastPhase.sign}. ${zodiac[lastPhase.sign]}`}/>
       </div>
       <a href="#">{<FontAwesomeIcon icon={faGithub} size='2x' className='icon github' />}</a>
     </main>
