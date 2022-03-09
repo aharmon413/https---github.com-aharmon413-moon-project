@@ -48,9 +48,9 @@ function calcMajorPhases(now) {
   let lastPhase, nextPhase, lastMajorPhase;
   for (let majorPhase of majorPhases) {
     let majorPhaseDate = new Date(`${majorPhase.date} ${majorPhase.time}`);
-    if (now > majorPhaseDate) {
+    if (now.getTime() >= majorPhaseDate.getTime()) {
       lastMajorPhase = majorPhase; // save this date in case the next date checked is our next major phase. If so, that means this one is the previous major phase.
-    } else if (now <= majorPhaseDate) {
+    } else if (now.getTime() <= majorPhaseDate.getTime()) {
       lastPhase = lastMajorPhase;
       nextPhase = majorPhase;
       return [lastPhase, nextPhase];
@@ -62,8 +62,6 @@ function App() {
   let [now, currentPhaseName] = calcCurrentPhase();
   let [lastPhase, nextPhase] = calcMajorPhases(now);
   let currentPhaseActivities = moonCycle[currentPhaseName].activities.map(item => <li>{item}</li>);
-  let lastSign = zodiac[lastPhase.sign].name;
-  let nextSign = zodiac[nextPhase.sign].name;
 
   return (
     <main>
@@ -75,8 +73,8 @@ function App() {
       <div className="panels">
         <InfoPanel sectionHeader={currentPhaseName} sectionContent={moonCycle[currentPhaseName].description} />
         <InfoPanel sectionHeader='During This Phase' sectionContent={currentPhaseActivities} />
-        <InfoPanel sectionHeader='Next Major Phase' sectionContent={`${nextPhase.type} Moon on ${nextPhase.date} in`} zodiacSign={`${zodiac[nextSign].symbol} ${nextSign}`} zodiacMessage={zodiac[nextSign].message}/>
-        <InfoPanel sectionHeader='Last Major Phase' sectionContent={`${lastPhase.type} Moon on ${lastPhase.date} in`} zodiacSign={`${zodiac[lastSign].symbol} ${lastSign}`} zodiacMessage={zodiac[lastSign].message}/>
+        <InfoPanel sectionHeader='Next Major Phase' sectionContent={`${nextPhase.type} Moon on ${nextPhase.date} in`} zodiac={zodiac[nextPhase.sign]} />
+        <InfoPanel sectionHeader='Last Major Phase' sectionContent={`${lastPhase.type} Moon on ${lastPhase.date} in`} zodiac={zodiac[lastPhase.sign]} />
       </div>
       <a href="#">{<FontAwesomeIcon icon={faGithub} size='2x' className='icon github' />}</a>
     </main>
