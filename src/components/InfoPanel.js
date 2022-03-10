@@ -5,7 +5,11 @@ import ZodiacBadge from './ZodiacBadge';
 const InfoPanel = ({ sectionHeader, sectionContent, zodiac }) => {
     let button;
     let zodiacBadge;
-    if (!sectionHeader.includes('Phase')) button = (<a href="/" className="button"><FontAwesomeIcon icon={faTwitter} className="twitter-icon" /> Share on Twitter</a>);
+    if (!sectionHeader.includes('Phase')) {
+        let tweetMessage = sectionContent.slice(0, sectionContent.indexOf('.') + 1);
+        let tweetURL = `https://twitter.com/intent/tweet?text=${tweetMessage} Learn more at [...] 🌙`;
+        button = (<a href={tweetURL} target="_blank" className="button"><FontAwesomeIcon icon={faTwitter} className="twitter-icon" /> Share on Twitter</a>);
+    }
     if (sectionHeader.includes('Major')) zodiacBadge = (<ZodiacBadge sign={`${zodiac.symbol} ${zodiac.name}`} />);
 
     return ( 

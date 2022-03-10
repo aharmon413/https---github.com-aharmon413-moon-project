@@ -1,12 +1,21 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGear } from '@fortawesome/free-solid-svg-icons'
+import { useState, useEffect } from 'react';
 
 const DateAndTime = () => {
+    let [currentTime, setCurrentTime] = useState(new Date());
+
+    function getFormattedDate(now) {
+        const Months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        return `${Months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+    };
+
+    useEffect(() => setInterval(
+        () => setCurrentTime(new Date()),
+        1000), []);
+
     return ( 
         <div className="date-and-time">
-            <p className="date">February 23rd, 2022</p>
-            <p className="time">5:49pm EST</p>
-            <button type="button" className="settings"><FontAwesomeIcon icon={faGear} className='icon settings-icon' /></button>
+            <p className="date">{getFormattedDate(currentTime)}</p>
+            <p className="time">{currentTime.toLocaleTimeString()}</p>
         </div>
      );
 }
