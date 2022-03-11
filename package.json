@@ -1,6 +1,6 @@
 {
   "name": "moon-dashboard",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": {
     "name": "Amber Harmon",
     "email": "amber@amberharmon.com"
@@ -9,6 +9,7 @@
   "keywords": [
     "moon, astrology, zodiac, witchcraft, space"
   ],
+  "homepage": "moons.amberharmon.com",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.3.0",
