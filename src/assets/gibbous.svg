@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 <svg width="500" height="500" version="1.1" viewBox="0 0 132.29 132.29" xmlns="http://www.w3.org/2000/svg">
  <defs>
-  <clipPath id="clipPath18079">
-   <circle cx="99.219" cy="66.146" r="66.146" fill="#000080" opacity=".5" stroke-width=".13229"/>
+  <clipPath id="clipPath4086">
+   <path d="m48.799-3.3073a69.453 69.453 0 0 0-60.148 34.727 69.453 69.453 0 0 0 0 69.453 69.453 69.453 0 0 0 60.148 34.727 69.453 69.453 0 0 0 60.148-34.727 69.453 69.453 0 0 0 0-69.453 69.453 69.453 0 0 0-60.148-34.727z" fill="#e6de9a" fill-rule="evenodd" opacity=".79" stroke-width=".13891"/>
   </clipPath>
  </defs>
- <circle transform="matrix(-1 0 0 1 132.29 0)" cx="66.146" cy="66.146" r="66.146" clip-path="url(#clipPath18079)" fill="#e6de9a" stroke-width=".13229"/>
+ <path transform="translate(-.00012725)" d="m66.146 6.5e-7a66.146 66.146 0 0 0-57.284 33.073 66.146 66.146 0 0 0 0 66.146 66.146 66.146 0 0 0 57.284 33.073 66.146 66.146 0 0 0 57.284-33.073 66.146 66.146 0 0 0 0-66.146 66.146 66.146 0 0 0-57.284-33.073z" clip-path="url(#clipPath4086)" fill="#e6de9a" fill-rule="evenodd" stroke-width=".13229"/>
 </svg>

@@ -1,14 +1,27 @@
 @import 'variables';
 
 .current-moon {
-    .moon {
-        margin: 0 auto 1.5em auto;
+    .moon, .moon-phase img {
         width: 12.5em;
-        position: relative;
-        z-index: 1; // prevents box-shadow around relatively positioned date-and-time panel from overlapping moon svg
 
         @include extra-large {
             width: 26.5625em;
+        }
+    }
+
+    .moon {
+        margin: 0 auto 1.5em auto;
+        position: relative;
+        z-index: 1; // prevents box-shadow around relatively positioned date-and-time panel from overlapping moon svg
+
+        .moon-phase {
+            position: absolute;
+            top: 0;
+        }
+
+        .flipped {
+            // horizontally mirror moon SVG for waxing phases
+            transform: scaleX(-1);
         }
     }
 

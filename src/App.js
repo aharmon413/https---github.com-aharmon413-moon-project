@@ -65,9 +65,10 @@ function App() {
 
   return (
     <main>
+      
       <div className="current-moon">
-        <h1>it's da moon</h1>
-        <Moon />
+        <h1>Today's Moon</h1>
+        <Moon phaseName={currentPhaseName}/>
         <DateAndTime />
       </div>
       <div className="panels">
