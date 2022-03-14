@@ -77,7 +77,7 @@ function App() {
         <InfoPanel sectionHeader='Next Major Phase' sectionContent={`${nextPhase.type} Moon on ${nextPhase.date} in`} zodiac={zodiac[nextPhase.sign]} />
         <InfoPanel sectionHeader='Last Major Phase' sectionContent={`${lastPhase.type} Moon on ${lastPhase.date} in`} zodiac={zodiac[lastPhase.sign]} />
       </div>
-      <a href="#">{<FontAwesomeIcon icon={faGithub} size='2x' className='icon github' />}</a>
+      <a href="https://github.com/aharmon413/moon-project">{<FontAwesomeIcon icon={faGithub} size='2x' className='icon github' />}</a>
     </main>
   );
 }
