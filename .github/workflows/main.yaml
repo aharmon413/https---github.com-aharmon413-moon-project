@@ -40,7 +40,7 @@ jobs:
             --exclude ".github/*" \
             --exclude README.md \
             --region us-east-1 \
-            ./ s3://kjr-amber-content/sites/moons.amberharmon.com/
+            ./build/ s3://kjr-amber-content/sites/moons.amberharmon.com/
 
       - name: Clear CDN
         env:
