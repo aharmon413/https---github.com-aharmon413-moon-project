@@ -48,7 +48,7 @@ main {
     @include extra-large {
         margin: 0 auto;
         width: 84.375em;
-        padding-top: 6.5em;
+        padding-top: 5em;
         display: grid;
         justify-content: center;
         grid-template: 1fr / 31.25em /* current-moon div */ 53.125em /* panels div */;
