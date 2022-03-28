@@ -61,5 +61,9 @@
         @include large {
             margin: .5em auto 1.25em auto;
         }
+
+        .zodiac-symbol {
+            font-family: 'Segoe UI Symbol';
+        }
     }
 }

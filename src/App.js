@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import './styles/App.scss';
 
+//---------------------------------------------------------------------------//
+
 function getPhaseName(phase) {
   switch (true) {
     case (phase == 30 || phase == 1): // new moon value can be 1 or 30
@@ -39,45 +41,42 @@ function calcCurrentPhase() {
   let now = new Date();
   let new_moon = new Date(1970, 0, 7, 20, 35, 0);
   let phase = ((now.getTime() - new_moon.getTime()) / 1000) % lp;
-  phase = Math.floor(phase / (24 * 3600)) + 1;
-  let phaseName = getPhaseName(phase);
-  return [now, phaseName];
+  return [now, getPhaseName(Math.floor(phase / (24 * 3600)) + 1)];
 };
 
 function calcMajorPhases(now) {
-  let lastPhase, nextPhase, lastMajorPhase;
+  let lastMajorPhase;
   for (let majorPhase of majorPhases) {
     let majorPhaseDate = new Date(`${majorPhase.date} ${majorPhase.time}`);
     if (now.getTime() >= majorPhaseDate.getTime()) {
       lastMajorPhase = majorPhase; // save this date in case the next date checked is our next major phase. If so, that means this one is the previous major phase.
-    } else if (now.getTime() <= majorPhaseDate.getTime()) {
-      lastPhase = lastMajorPhase;
-      nextPhase = majorPhase;
-      return [lastPhase, nextPhase];
+    } else {
+      return [lastMajorPhase, majorPhase];
     }
   }
 };
 
+//---------------------------------------------------------------------------//
+
 function App() {
   let [now, currentPhaseName] = calcCurrentPhase();
   let [lastPhase, nextPhase] = calcMajorPhases(now);
-  let currentPhaseActivities = moonCycle[currentPhaseName].activities.map(item => <li>{item}</li>);
+  let currentPhaseActivities = moonCycle[currentPhaseName].activities.map((item, index) => <li key={index}>{item}</li>);
 
   return (
     <main>
-      
       <div className="current-moon">
         <h1>Today's Moon</h1>
         <Moon phaseName={currentPhaseName}/>
-        <DateAndTime />
+        <DateAndTime/>
       </div>
       <div className="panels">
-        <InfoPanel sectionHeader={currentPhaseName} sectionContent={moonCycle[currentPhaseName].description} />
-        <InfoPanel sectionHeader='During This Phase' sectionContent={currentPhaseActivities} />
-        <InfoPanel sectionHeader='Next Major Phase' sectionContent={`${nextPhase.type} Moon on ${nextPhase.date} in`} zodiac={zodiac[nextPhase.sign]} />
-        <InfoPanel sectionHeader='Last Major Phase' sectionContent={`${lastPhase.type} Moon on ${lastPhase.date} in`} zodiac={zodiac[lastPhase.sign]} />
+        <InfoPanel sectionHeader={currentPhaseName} sectionContent={moonCycle[currentPhaseName].description}/>
+        <InfoPanel sectionHeader='During This Phase' sectionContent={currentPhaseActivities}/>
+        <InfoPanel sectionHeader='Next Major Phase' sectionContent={`${nextPhase.type} Moon on ${nextPhase.date} in`} zodiac={zodiac[nextPhase.sign]}/>
+        <InfoPanel sectionHeader='Last Major Phase' sectionContent={`${lastPhase.type} Moon on ${lastPhase.date} in`} zodiac={zodiac[lastPhase.sign]}/>
       </div>
-      <a href="https://github.com/aharmon413/moon-project">{<FontAwesomeIcon icon={faGithub} size='2x' className='icon github' />}</a>
+      <a href="https://github.com/aharmon413/moon-project" aria-label="View this website's GitHub repo">{<FontAwesomeIcon icon={faGithub} size='2x' className='icon github'/>}</a>
     </main>
   );
 }

@@ -2,18 +2,24 @@ import crescent from '../assets/crescent.svg';
 import quarter from '../assets/quarter.svg';
 import gibbous from '../assets/gibbous.svg';
 
-const Moon = ({ phaseName }) => {
+//---------------------------------------------------------------------------//
 
-    function getCurrentPhaseSVG(phase) {
-        if (phaseName.includes('Crescent')) {
+function getCurrentPhaseSVG(phaseName) {
+    switch (true) {
+        case (phaseName.includes('Crescent')):
             return crescent;
-        } else if (phaseName.includes('Quarter')) {
+        case (phaseName.includes('Quarter')):
             return quarter;
-        } else if (phaseName.includes('Gibbous')) {
+        case (phaseName.includes('Gibbous')):
             return gibbous;
-        }
-    };
+        default:
+            return;
+    }
+};
 
+//---------------------------------------------------------------------------//
+
+const Moon = ({ phaseName }) => {
     let currentPhaseSVG = getCurrentPhaseSVG(phaseName);
 
     return ( 
@@ -24,8 +30,8 @@ const Moon = ({ phaseName }) => {
                 </svg>
             </div>
             { currentPhaseSVG && <div className="moon-phase">
-                                    <img className={phaseName.includes('Waxing') || phaseName.includes('First') ? 'flipped' : null} alt="" src={currentPhaseSVG}/>
-                                </div> }
+                                    <img className={phaseName.includes('Waxing') || phaseName.includes('First') ? 'flipped' : null} alt={phaseName} src={currentPhaseSVG}/>
+                                 </div> }
             
         </div>
      );

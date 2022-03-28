@@ -1,5 +1,5 @@
-const ZodiacBadge = ({ sign }) => {
-    return (<div className="zodiac-badge">{sign}</div>);
+const ZodiacBadge = ({ symbol, name }) => {
+    return (<div className="zodiac-badge"><span className="zodiac-symbol">{symbol}</span> {name}</div>);
 };
 
 export default ZodiacBadge;
