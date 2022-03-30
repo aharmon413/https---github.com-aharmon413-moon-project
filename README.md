@@ -3,7 +3,7 @@
 
 _View live at [moons.amberharmon.com](https://moons.amberharmon.com/)_
 
-![moons.amberharmon.com](https://user-images.githubusercontent.com/83358042/159213340-7a0476d9-68b6-4584-91b6-cf3b873456db.png)
+![moons.amberharmon.com](https://user-images.githubusercontent.com/83358042/160876707-c3062aa4-cc60-417d-85b1-a27aa2c973c9.png)
 
 ## About
 
@@ -20,8 +20,8 @@ The current moon phase is calculated using a simple formula by [Ben Daglish](htt
 The major moon phases, specifically the associated zodiac signs, were a little more complicated. As it turns out, astrology calculations are very complex! I couldn't find an API that fit my needs and stayed within the scope of my ability and this project, so I ended up compiling a few years' worth of moon phase data into a JSON file.
 
 In the near future, I plan to update the project with:
-- [ ] Code cleanup and optimization
-- [ ] Basic animations and hover states
+- [x] Code cleanup and optimization
+- [x] Hover states on links and buttons
 - [ ] A few simple unit tests
 
 ## Resources
