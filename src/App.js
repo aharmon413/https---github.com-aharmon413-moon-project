@@ -1,6 +1,7 @@
 import Moon from './components/Moon';
 import DateAndTime from './components/DateAndTime';
 import InfoPanel from './components/InfoPanel';
+import { useEffect } from 'react';
 import { moonCycle } from './data/mooncycle';
 import { majorPhases } from './data/majormoonphases';
 import { zodiac } from './data/zodiacsigns';
@@ -63,8 +64,10 @@ function App() {
   let [lastPhase, nextPhase] = calcMajorPhases(now);
   let currentPhaseActivities = moonCycle[currentPhaseName].activities.map((item, index) => <li key={index}>{item}</li>);
 
+  useEffect(() => document.getElementById('main').classList.add('loaded'), []);
+
   return (
-    <main>
+    <main id="main">
       <div className="current-moon">
         <h1>Today's Moon</h1>
         <Moon phaseName={currentPhaseName}/>

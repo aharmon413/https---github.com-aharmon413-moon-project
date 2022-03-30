@@ -10,6 +10,7 @@
     }
 
     .moon {
+        filter: drop-shadow(0 0 .95em #004f99);
         margin: 0 auto 1.5em auto;
         position: relative;
         z-index: 1; // prevents box-shadow around relatively positioned date-and-time panel from overlapping moon svg

@@ -30,6 +30,10 @@ h1 {
     font-size: 3.25em;
     margin: 2rem 0 1rem 0;
 
+    @media screen and (max-width: 550px) { 
+        margin-top: 4rem; // prevent GitHub icon in corner from being too close to H1 on smaller screens
+    }
+
     @include extra-large {
         margin: 1rem 0 2rem 0;
     }
@@ -45,6 +49,13 @@ h2 {
 }
 
 main {
+    opacity: 0;
+    transition: opacity .75s ease-in;
+    
+    &.loaded {
+        opacity: 1;
+    }
+
     @include extra-large {
         margin: 0 auto;
         width: 84.375em;
@@ -81,4 +92,10 @@ main {
     position: absolute;
     top: .25em;
     right: .5em;
+    transition: color .3s linear, opacity .3s linear;
+
+        &:hover {
+            color: #fff;
+            opacity: .55;
+        }
 }
