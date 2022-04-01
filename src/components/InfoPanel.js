@@ -12,7 +12,7 @@ const InfoPanel = ({ sectionHeader, sectionContent, zodiac }) => {
     if (sectionHeader.includes('Major')) zodiacBadge = (<ZodiacBadge symbol={zodiac.symbol} name={zodiac.name}/>);
 
     return ( 
-        <section className={'info-panel'}>
+        <section className={'info-panel'} data-testid={button ? 'Current Phase' : sectionHeader}>
             <h2>{sectionHeader}</h2>
             {Array.isArray(sectionContent) ? // create a ul element instead of p for 'During This Phase' list
                 <ul className="content">{sectionContent}</ul>
