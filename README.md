@@ -19,14 +19,12 @@ The current moon phase is calculated using a simple formula by [Ben Daglish](htt
 
 The major moon phases, specifically the associated zodiac signs, were a little more complicated. As it turns out, astrology calculations are very complex! I couldn't find an API that fit my needs and stayed within the scope of my ability and this project, so I ended up compiling a few years' worth of moon phase data into a JSON file.
 
-In the near future, I plan to update the project with:
-- [x] Code cleanup and optimization
-- [x] Hover states on links and buttons
-- [ ] A few simple unit tests
+I also used this project as an opportunity to learn about code testing, utilizing the React Testing Library and Jest to write a few simple tests.
 
 ## Resources
 - [create-react-app](https://github.com/facebook/create-react-app) - initializing the project
 - [Ben Daglish](http://www.ben-daglish.net/moon.shtml) - the formula used to calculate the current moon phase
 - [AstroSeek](https://mooncalendar.astro-seek.com/full-moons-new-moons) - data about new and full moons
 - [FontAwesome](https://fontawesome.com/) - social media icons
+- [React Testing Library Tutorial](https://www.youtube.com/watch?v=7dTTFW7yACQ&list=PL4cUxeGkcC9gm4_-5UsNmLqMosM-dzuvQ) - The Net Ninja and Laith Harb's video series on React Testing Library
 - Special thank you to [Kevin](https://github.com/mage7223) for setting up a domain and deployment workflow for the project
