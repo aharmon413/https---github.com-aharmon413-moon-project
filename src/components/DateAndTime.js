@@ -10,7 +10,7 @@ function getFormattedDate(now) {
 //---------------------------------------------------------------------------//
 
 const DateAndTime = () => {
-    let [currentTime, setCurrentTime] = useState(new Date());
+    const [currentTime, setCurrentTime] = useState(new Date());
 
     useEffect(() => setInterval(
         () => setCurrentTime(new Date()),

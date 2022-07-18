@@ -38,10 +38,10 @@ function getPhaseName(phase) {
 // this function uses a known new moon in 1970 and the current date to calculate a value between 1 and 30,
 // with various ranges of numbers associated with different moon phases -- see getPhaseName function above
 function calcCurrentPhase() { 
-  let lp = 2551443;
-  let now = new Date();
-  let new_moon = new Date(1970, 0, 7, 20, 35, 0);
-  let phase = ((now.getTime() - new_moon.getTime()) / 1000) % lp;
+  const lp = 2551443;
+  const now = new Date();
+  const new_moon = new Date(1970, 0, 7, 20, 35, 0);
+  const phase = ((now.getTime() - new_moon.getTime()) / 1000) % lp;
   return [now, getPhaseName(Math.floor(phase / (24 * 3600)) + 1)];
 };
 
@@ -60,9 +60,9 @@ function calcMajorPhases(now) {
 //---------------------------------------------------------------------------//
 
 function App() {
-  let [now, currentPhaseName] = calcCurrentPhase();
-  let [lastPhase, nextPhase] = calcMajorPhases(now);
-  let currentPhaseActivities = moonCycle[currentPhaseName].activities.map((item, index) => <li key={index}>{item}</li>);
+  const [now, currentPhaseName] = calcCurrentPhase();
+  const [lastPhase, nextPhase] = calcMajorPhases(now);
+  const currentPhaseActivities = moonCycle[currentPhaseName].activities.map((item, index) => <li key={index}>{item}</li>);
 
   useEffect(() => document.getElementById('main').classList.add('loaded'), []);
 

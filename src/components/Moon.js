@@ -20,7 +20,7 @@ function getCurrentPhaseSVG(phaseName) {
 //---------------------------------------------------------------------------//
 
 const Moon = ({ phaseName }) => {
-    let currentPhaseSVG = getCurrentPhaseSVG(phaseName);
+    const currentPhaseSVG = getCurrentPhaseSVG(phaseName);
 
     return ( 
         <div className="moon">
