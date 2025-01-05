@@ -381,5 +381,125 @@ export const majorPhases = [
         time: "22:26:00",
         type: "New",
         sign: 9
-    }
+    },
+    {   date: "January 13, 2025",
+        time: "22:26:00",
+        type: "Full",
+        sign: 3
+    },
+    {   date: "January 29, 2025",
+        time: "12:35:00",
+        type: "New",
+        sign: 10
+    },
+    {   date: "February 12, 2025",
+        time: "13:53:00",
+        type: "Full",
+        sign: 4
+    },
+    {   date: "February 28, 2025",
+        time: "00:44:00",
+        type: "New",
+        sign: 11
+    },
+    {   date: "March 14, 2025",
+        time: "06:54:00",
+        type: "Full",
+        sign: 5
+    },
+    {   date: "March 29, 2025",
+        time: "10:57:00",
+        type: "New",
+        sign: 0
+    },
+    {   date: "April 13, 2025",
+        time: "00:21:00",
+        type: "Full",
+        sign: 6
+    },
+    {   date: "April 27, 2025",
+        time: "19:30:00",
+        type: "New",
+        sign: 1
+    },
+    {   date: "May 12, 2025",
+        time: "16:55:00",
+        type: "Full",
+        sign: 7
+    },
+    {   date: "May 27, 2025",
+        time: "03:02:00",
+        type: "New",
+        sign: 2
+    },
+    {   date: "June 11, 2025",
+        time: "07:43:00",
+        type: "Full",
+        sign: 8
+    },
+    {   date: "June 25, 2025",
+        time: "10:31:00",
+        type: "New",
+        sign: 3
+    },
+    {   date: "July 10, 2025",
+        time: "20:36:00",
+        type: "Full",
+        sign: 9
+    },
+    {   date: "July 24, 2025",
+        time: "19:10:00",
+        type: "New",
+        sign: 4
+    },
+    {   date: "August 9, 2025",
+        time: "07:54:00",
+        type: "Full",
+        sign: 10
+    },
+    {   date: "August 23, 2025",
+        time: "06:06:00",
+        type: "New",
+        sign: 5
+    },
+    {   date: "September 7, 2025",
+        time: "18:08:00",
+        type: "Full",
+        sign: 11
+    },
+    {   date: "September 21, 2025",
+        time: "19:53:00",
+        type: "New",
+        sign: 5
+    },
+    {   date: "October 7, 2025",
+        time: "03:47:00",
+        type: "Full",
+        sign: 0
+    },
+    {   date: "October 21, 2025",
+        time: "12:24:00",
+        type: "New",
+        sign: 6
+    },
+    {   date: "November 5, 2025",
+        time: "13:19:00",
+        type: "Full",
+        sign: 1
+    },
+    {   date: "November 20, 2025",
+        time: "06:46:00",
+        type: "New",
+        sign: 7
+    },
+    {   date: "December 4, 2025",
+        time: "23:13:00",
+        type: "Full",
+        sign: 2
+    },
+    {   date: "December 20, 2025",
+        time: "01:43:00",
+        type: "New",
+        sign: 8
+    },
 ];
